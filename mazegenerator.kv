@@ -1,0 +1,127 @@
+# file name mazegenerator.kv
+#:import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+<Shell>:
+    settings: _settings
+    transition: FadeTransition()
+    MazeSettings:
+        id: _settings
+        generator: _generator
+    MazeGenerator:
+        id: _generator
+
+<MazeSettings>:
+    corridor: _corridor
+    wall: _wall
+    corner: _corner
+    corner_size: _corner_size
+    dot: _dot
+    animation: _animation
+    name: 'Settings_screen'
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            CustomSlider:
+                id: _corridor
+                name: 'corridor'
+                parent: root
+            CustomSlider:
+                id: _wall
+                name: 'wall'
+                parent: root
+            CustomSlider:
+                id:_corner
+                name: 'corner'
+                parent: root
+            CustomSlider:
+                id:_corner_size
+                name: 'corner size'
+                parent: root
+            CustomSlider:
+                id: _dot
+                name: 'dot'
+                parent: root
+            CustomSlider:
+                id: _animation
+                name: 'animation'
+                parent: root
+        BoxLayout:
+            size_hint_y: .2
+            padding: (30,30)
+            Button:
+                size_hint_x: .3
+                text: 'Back'
+                on_press: root.manager.current = 'Maze_screen'
+            Label:
+                size_hint_x: .5
+            Button:
+                size_hint_x: .3
+                text: 'Apply layout'
+                on_press:
+                    root.applylayout()
+                    root.manager.current = 'Maze_screen'
+            Label:
+                size_hint_x: .5
+            Button:
+                size_hint_x: .3
+                text: 'Create maze'
+                on_press:
+                    root.reset()
+                    root.manager.current = 'Maze_screen'
+
+
+<MazeGenerator>:
+    name: 'Maze_screen'
+    running: _start
+    canvas.before:
+        Color:
+            rgba: 1,1,1,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    Button:
+        id: _start
+        text: 'Start'
+        pos: root.width - 210, 10
+        size: 200, 50
+        size_hint: None, None
+        on_press: root.start('start')
+    Button:
+        text: 'Back'
+        pos: 10,10
+        size: 200, 50
+        size_hint: None, None
+        on_press:
+            root.start('back')
+            root.manager.current = 'Settings_screen'
+<Wedge>:
+    generator: self.root
+    size_hint: None, None
+
+
+
+
+<CustomSlider>:
+    w_slider: _w_slider
+    header: _header
+    footer: _footer
+    orientation: 'vertical'
+    Label:
+        id: _header
+        size_hint_y: .1
+        halign: 'center'
+        text: 'Header'
+    Slider:
+        id: _w_slider
+        size_hint_y: .7
+        orientation: 'vertical'
+        step: 1
+        on_value: root.slide_to(self.value, root.name)
+    Label:
+        id: _footer
+        size_hint_y: .2
+        text: 'Footer'
+
+
+
