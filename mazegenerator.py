@@ -18,7 +18,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 
 
-
 BLACK = (0, 0, 0)
 WHITE = (1, 1, 1)
 RED = (1, 0, 0)
@@ -37,14 +36,17 @@ current_wedge = 1
 CenterX = 550
 CenterY = 550
 
+
 class MazeGeneratorApp(App):
 
     def build(self):
         Larch = Shell()
         return Larch
 
+
 class Shell(ScreenManager):
     pass
+
 
 class MazeSettings(Screen):
 
@@ -136,6 +138,7 @@ class CustomSlider(BoxLayout):
             self.parent.dot_set = value
         if name == 'animation':
             self.parent.animation_set = 1 / value
+
 
 class MazeGenerator(Screen):
 
@@ -249,6 +252,7 @@ class Maze(RelativeLayout):
                                     width=CORNER, cap='round'))
         self.canvas.add(self.outer_line)
 
+
 class Wedge(RelativeLayout):
 
     def __init__(self, angle_left, angle_right, ring_num, ring_spec, list_pos, in_ring):
@@ -330,7 +334,6 @@ class Wedge(RelativeLayout):
         else:
             self.In = 0
             self.w_in = None
-
 
     def makeactive(self, w):
         global current_wedge
@@ -482,6 +485,7 @@ class Wedge(RelativeLayout):
             if self.dot is not None:
                 self.dot = None
 
+
 def Counter(rnum, wedge_density, inner_ring):
         wedge_count = int((2 * PI) * (inner_ring + (rnum * CORRIDOR)) // CORRIDOR)
         wedge_cap = int(fmod(wedge_count, wedge_density))
@@ -515,7 +519,7 @@ class switch(object):
         else:
             return False
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     MazeGeneratorApp().run()
 
