@@ -1,13 +1,21 @@
 Circular Maze Generator
 =======================
 
-Still writing..
+First ever built python program just for fun. Going nuts with my raspberry pi I got the taste for coding.
+Build with python 2.7 and kivy 1.9
 
 Maze Settings
 -------------
 
 There are characteristics of the maze that can be set.
 
+.. image:: screenshot_1.jpg
+   :width: 40pt
+
+* Number of rings.
+
+.. image:: screenshot_2.jpg
+   :width: 40pt
 
 Footnote
 --------

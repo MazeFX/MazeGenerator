@@ -445,37 +445,6 @@ class Wedge(RelativeLayout):
                 self.corner_down = None
             if self.corner_up is not None:
                 self.corner_up = None
-#       with Canvas:
-#           self.g_number = Label(pos= self.pos_dot,
-#                               size=(DIAMDOT, DIAMDOT),
-#                               text=str(self.l_pos),
-#                               color=(0, 0, 0, 1),
-#                               markup=True,
-#                               halign='center',
-#                               valign='middle')
-#
-#           self.g_in = Label(pos= (self.pos_dot[0] - DIAMDOT, self.pos_dot[1] - DIAMDOT),
-#                               size=(DIAMDOT, DIAMDOT),
-#                               text=str(self.In),
-#                               color=(1, 0, 0, 1),
-#                               markup=True,
-#                               halign='left',
-#                               valign='bottom')
-#           self.g_out1 = Label(pos= (self.pos_dot[0] - DIAMDOT, self.pos_dot[1] + DIAMDOT),
-#                               size=(DIAMDOT, DIAMDOT),
-#                               text=str(self.out1),
-#                               color=(0, 0, 1, 1),
-#                               markup=True,
-#                               halign='left',
-#                               valign='bottom')
-#           if self.out2 is not None:
-#               self.g_out2 = Label(pos= (self.pos_dot[0] + DIAMDOT, self.pos_dot[1] + DIAMDOT),
-#                                   size=(DIAMDOT, DIAMDOT),
-#                                   text=str(self.out2),
-#                                   color=(0, 0, 1, 1),
-#                                   markup=True,
-#                                   halign='left',
-#                                    valign='bottom')
 
     def draw_dot(self, Canvas):
         if self.flag_routed:
