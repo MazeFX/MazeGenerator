@@ -9,12 +9,12 @@ Maze Settings
 
 There are characteristics of the maze that can be set.
 
-.. image:: screenshot_1.jpg
+.. image:: screenshot_1.png
    :width: 40pt
 
 * Number of rings.
 
-.. image:: screenshot_2.jpg
+.. image:: screenshot_2.png
    :width: 40pt
 
 Footnote
