@@ -9,10 +9,22 @@ Maze Settings
 
 There are characteristics of the maze that can be set.
 
+* Corridor width - Determines the width of the corridors and as a result the number of rings
+
+* Wall thickness in pixels.
+
+* Corner thickness in pixels.
+
+* Corner size as a part of wedge width.
+
+* Dot diameter for walker dot.
+
+* Animation speed
+
+It is possible to change these settings (except for the corridor width) with an already generated maze. If you got a maze you like you can go back and change the layout.
+
 .. image:: screenshot_1.png
    :width: 40pt
-
-* Number of rings.
 
 .. image:: screenshot_2.png
    :width: 40pt
